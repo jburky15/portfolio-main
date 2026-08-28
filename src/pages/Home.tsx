@@ -4,6 +4,8 @@ import FeaturedProjects from '../components/FeaturedProjects'
 import About from '../components/About'
 import Skills from '../components/Skills'
 import Experience from '../components/Experience'
+import Contact from '../components/Contact'
+import Footer from '../components/Footer'
 
 function Home() {
   return (
@@ -16,7 +18,10 @@ function Home() {
         <About />
         <Skills />
         <Experience />
+        <Contact />
       </main>
+
+      <Footer />
     </div>
   )
 }

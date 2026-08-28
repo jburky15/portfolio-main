@@ -1,35 +1,65 @@
-export default function Hero() {
-    return (
-        <section id="home"className="min-h-[calc(100vh-80px)] flex items-center">
-            <div className="mx-auto w-full max-w-6xl px-6 py-24">
-                <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-blue-400">
+import { ArrowDown } from 'lucide-react'
+import Section from './Section'
+
+function Hero() {
+    return(
+        <Section className="relative flex min-h-[calc(100vh-5rem)] items-center overflow-hidden">
+            <div className="pointer-events-none absolute inset-0">
+                <div className="absolute left-1/2 top-1/3 h-96 w-96 -translate-x-1/2 rounded-full bg-blue-500/10 blur-3xl" />
+            </div>
+
+            <div className="relative max-w-4xl">
+                <p className="mb-6 text-sm font-medium uppercase tracking-[0.25em] text-blue-400">
                     Software Developer
                 </p>
 
-                <h1 className="max-w-4xl text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
-                    Building fun and useful things for the web.
+                <h1 className="text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
+                    Building software for
+                    <span className="block text-slate-400">
+                        real world problems.
+                    </span>
                 </h1>
 
-                <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-400">
-                    My name is <span className="text-white text-2xl font-bold hover:text-blue-400">Joe Burkhart</span> and I am a software developer focused on building some fun web apps using React, TypeScript, Python and Node.js.
+                <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-400 sm:text-xl">
+                    I build practical web applications combining software development knowledge and real world technical operations experience.
                 </p>
 
                 <div className="mt-10 flex flex-wrap gap-4">
-                    <a href="#projects"
-                        className="rounded-lg bg-blue-500 px-6 py-3 font-medium text-white transition hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
+                    <a
+                        href="#projects"
+                        className="rounded-lg bg-white px-6 py-3 text-sm font-medium text-slate-950 transition hover:-translate-y-0.5 hover:bg-slate-200"
                     >
-                        View My Current Projects
+                        Check Out My Work
                     </a>
 
-                    <a href="https://github.com/jburky15"
+                    <a
+                        href="https://github.com/jburky15"
                         target="_blank"
                         rel="noreferrer"
-                        className="rounded-lg border border-slate-700 px-6 py-3 fount-medium text-slate-200 transition hover:border-slate-500 hover:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
+                        className="rounded-lg border border-slate-700 px-6 py-3 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:bg-slate-900"
                     >
-                        Check Out My GitHub For More
+                        GitHub
                     </a>
                 </div>
+
+                <div className="mt-16 flex items-center gap-6 text-slate-500">
+                    <a
+                        href="#projects"
+                        className="transition hover:text-slate-300"
+                        aria-label="View Projects"
+                    >
+                        <ArrowDown className="h-5 w-5 animate-bounce" />
+                    </a>
+
+                    <div className="h-px w-16 bg-slate-800" />
+
+                    <span className="text-xs uppercase tracking-[0.2em]">
+                        Explore
+                    </span>
+                </div>
             </div>
-        </section>
+        </Section>
     )
 }
+
+export default Hero

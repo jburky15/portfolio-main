@@ -12,9 +12,11 @@ function Section({
     return (
         <section
             id={id}
-            className={`mx-auto w-full max-w-6xl px-6 py-24 ${className}`}
+            className={`px-6 py-24 sm:py-32 ${className}`}
         >
-            {children}
+            <div className="mx-auto w-full max-w-6xl ">
+                {children}
+            </div>
         </section>
     )
 }
