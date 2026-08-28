@@ -11,7 +11,7 @@ function App() {
 
       <main className="mx-auto max-w-6xl px-6 py-24">
         <h1 className="text-5xl font-bold tracking-tight">
-          Joseph Burkhart
+          Joe Burkhart
         </h1>
 
         <p className="mt-4 text-xl text-gray-400">
