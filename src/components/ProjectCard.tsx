@@ -3,13 +3,11 @@ import type { Project } from '../types/project';
 interface ProjectCardProps {
     project: Project
     number: number
-    onSelect: (project: Project) => void
 }
 
-function ProjectCard({ project, number, onSelect }: ProjectCardProps) {
+function ProjectCard({ project, number }: ProjectCardProps) {
     return (
-        <article 
-            onClick={() => onSelect(project)}
+        <article
             className="group flex h-full flex-col rounded-2xl border border-slate-800 bg-slate-900/50 p-8 transition duration-300 hover:-translate-y-1 hover:border-slate-700 hover:bg-slate-900">
             <div className="flex items-start justify-between gap-4">
                 <span className="text-sm font-medium text-blue-400">

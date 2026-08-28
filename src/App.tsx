@@ -1,47 +1,19 @@
-import { useState } from 'react'
-import type { Project } from './types/project'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import FeaturedProjects from './components/FeaturedProjects'
-import Skills from './components/Skills'
-import About from './components/About'
-import Experience from './components/Experience'
-import ProjectDetails from './components/ProjectDetails'
+import Home from './pages/Home'
+import ProjectPage from './pages/ProjectPage'
 
 function App() {
-  const [selectedProject, setSelectedProject] =
-    useState<Project | null>(null)
-
-  if (selectedProject) {
-    return (
-      <div className="min-h-screen bg-slate-950 text-white">
-        <Navbar />
-
-        <ProjectDetails
-          project={selectedProject}
-          onBack={() => setSelectedProject(null)}
-        />
-      </div>
-    )
-  }
-
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
-      <Navbar />
-
-      <main>
-        <Hero />
-
-        <FeaturedProjects
-          onSelectProject={setSelectedProject}
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/projects/:projectId"
+          element={<ProjectPage />}
         />
-
-        <About />
-        <Skills />
-        <Experience />
-      </main>
-    </div>
+      </Routes>
+    </BrowserRouter>
   )
 }
 

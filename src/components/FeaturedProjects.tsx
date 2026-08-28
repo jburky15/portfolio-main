@@ -1,17 +1,10 @@
-
-import type { Project } from '../types/project'
+import { Link } from 'react-router-dom'
 import { projects } from '../data/projects'
 import Section from './Section'
 import SectionHeading from './SectionHeading'
 import ProjectCard from './ProjectCard'
 
-interface FeaturedProjectsProps {
-  onSelectProject: (project: Project) => void
-}
-
-function FeaturedProjects({
-  onSelectProject,
-}: FeaturedProjectsProps) {
+function FeaturedProjects() {
   const featuredProjects = projects.filter(
     (project) => project.featured,
   )
@@ -26,12 +19,16 @@ function FeaturedProjects({
 
       <div className="grid gap-6 lg:grid-cols-3">
         {featuredProjects.map((project, index) => (
-          <ProjectCard
+          <Link
             key={project.id}
-            project={project}
-            number={index + 1}
-            onSelect={onSelectProject}
-          />
+            to={`/projects/${project.id}`}
+            className="block"
+          >
+            <ProjectCard
+              project={project}
+              number={index + 1}
+            />
+          </Link>
         ))}
       </div>
     </Section>
