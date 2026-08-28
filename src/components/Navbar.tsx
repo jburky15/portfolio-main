@@ -62,51 +62,93 @@ function Navbar() {
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                     className="rounded-md p-2 text-slate-400 transition hover:bg-slate-900 hover:text-white md:hidden"
                 >
-                    {isMenuOpen ? 'X' : '☰'}
+                    <span className="relative block h-5 w-5">
+                        <span
+                            className={`absolute left-0 top-1 h-0.5 w-5 bg-current transition-all duration-300 ${
+                                isMenuOpen ? 'translate-y-1.5 rotate-45' : ''
+                            }`}
+                        />
+
+                        <span
+                            className={`absolute left-0 top-2.5 h-0.5 w-5 bg-current transition-all duration-300 ${
+                                isMenuOpen ? 'opacity-0' : 'opacity-100'
+                            }`}
+                        />
+
+                        <span
+                            className={`absolute left-0 top-4 h-0.5 w-5 bg-current transition-all duration-300 ${
+                                isMenuOpen ? '-translate-y-1.5 -rotate-45' : ''
+                            }`}
+                        />
+                        </span>
                 </button>
             </nav>
             {/* Mobile Navigation */}
-            {isMenuOpen && (
-                <div className="border-t border-slate-800 bg-slate-950 md:hidden">
+                <div
+                    className={`overflow-hidden border-t border-slate-800 bg-slate-950 transition-all duration-300 ease-in-out md:hidden ${
+                        isMenuOpen
+                        ? 'max-h-96 opacity-100'
+                        : 'max-h-0 border-t-transparent opacity-0'
+                    }`}
+                >
                     <div className="mx-auto flex max-w-6xl flex-col px-6 py-4">
                         <a
                             href="#projects"
                             onClick={closeMenu}
-                            className="py-3 text-sm text-slate-300 hover:text-white"
+                            className={`py-3 text-sm text-slate-300 transition-all duration-300 ${
+                                isMenuOpen
+                                ? 'translate-x-0 opacity-100 delay-75'
+                                : '-translate-x-4 opacity-0'
+                            } hover:text-white`}
                         >
                             Projects
                         </a>
                         <a
                             href="#about"
                             onClick={closeMenu}
-                            className="py-3 text-sm text-slate-300 hover:text-white"
+                            className={`py-3 text-sm text-slate-300 transition-all duration-300 ${
+                                isMenuOpen
+                                ? 'translate-x-0 opacity-100 delay-100'
+                                : '-translate-x-4 opacity-0'
+                            } hover:text-white`}
                         >
                             About
                         </a>
                         <a
                             href='#skills'
                             onClick={closeMenu}
-                            className='text-sm text-slate-400 transition hover:text-white'
+                            className={`py-3 text-sm text-slate-300 transition-all duration-300 ${
+                                isMenuOpen
+                                ? 'translate-x-0 opacity-100 delay-150'
+                                : '-translate-x-4 opacity-0'
+                            } hover:text-white`}
                         >
                             Skills
                         </a>
                         <a
                             href="#experience"
                             onClick={closeMenu}
-                            className="py-3 text-sm text-slate-300 hover:text-white"
+                            className={`py-3 text-sm text-slate-300 transition-all duration-300 ${
+                                isMenuOpen
+                                ? 'translate-x-0 opacity-100 delay-200'
+                                : '-translate-x-4 opacity-0'
+                            } hover:text-white`}
                         >
                             Experience
                         </a>
                         <a
                             href="#contact"
                             onClick={closeMenu}
-                            className="py-3 text-sm text-slate-300 hover:text-white"
+                            className={`py-3 text-sm text-slate-300 transition-all duration-300 ${
+                                isMenuOpen
+                                ? 'translate-x-0 opacity-100 delay-300'
+                                : '-translate-x-4 opacity-0'
+                            } hover:text-white`}
                         >
                             Contact
                         </a>
                     </div>
                 </div>
-            )}
         </header>
     )
 }

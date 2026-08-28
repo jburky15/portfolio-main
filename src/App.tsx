@@ -1,18 +1,42 @@
+import { useState } from 'react'
+import type { Project } from './types/project'
+
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import FeaturedProjects from './components/FeaturedProjects'
 import Skills from './components/Skills'
 import About from './components/About'
 import Experience from './components/Experience'
+import ProjectDetails from './components/ProjectDetails'
 
 function App() {
+  const [selectedProject, setSelectedProject] =
+    useState<Project | null>(null)
+
+  if (selectedProject) {
+    return (
+      <div className="min-h-screen bg-slate-950 text-white">
+        <Navbar />
+
+        <ProjectDetails
+          project={selectedProject}
+          onBack={() => setSelectedProject(null)}
+        />
+      </div>
+    )
+  }
+
   return (
-    <div className="min-h-screen bg-gray-950 text-white">
+    <div className="min-h-screen bg-slate-950 text-white">
       <Navbar />
 
-      <main className="mx-auto max-w-6xl px-6 py-24">
+      <main>
         <Hero />
-        <FeaturedProjects />
+
+        <FeaturedProjects
+          onSelectProject={setSelectedProject}
+        />
+
         <About />
         <Skills />
         <Experience />
