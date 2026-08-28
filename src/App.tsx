@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import FeaturedProjects from './components/FeaturedProjects'
+import Skills from './components/Skills'
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Navbar />
       <Hero />
       <FeaturedProjects />
+      <Skills />
 
       <main className="mx-auto max-w-6xl px-6 py-24">
         <h1 className="text-5xl font-bold tracking-tight">
