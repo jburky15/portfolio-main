@@ -1,6 +1,6 @@
 export default function Hero() {
     return (
-        <section className="min-h-[calc(100vh-80px)] flex items-center">
+        <section id="home"className="min-h-[calc(100vh-80px)] flex items-center">
             <div className="mx-auto w-full max-w-6xl px-6 py-24">
                 <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-blue-400">
                     Software Developer
@@ -11,7 +11,7 @@ export default function Hero() {
                 </h1>
 
                 <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-400">
-                    My name is <span className="text-white text-2xl font-bold">Joe Burkhart</span> and I am a software developer focused on building some fun web apps using React, TypeScript, Python and Node.js.
+                    My name is <span className="text-white text-2xl font-bold hover:text-blue-400">Joe Burkhart</span> and I am a software developer focused on building some fun web apps using React, TypeScript, Python and Node.js.
                 </p>
 
                 <div className="mt-10 flex flex-wrap gap-4">
