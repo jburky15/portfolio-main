@@ -27,7 +27,7 @@ function Hero() {
                 <div className="mt-10 flex flex-wrap gap-4">
                     <a
                         href="#projects"
-                        className="rounded-lg bg-white px-6 py-3 text-sm font-medium text-slate-950 transition hover:-translate-y-0.5 hover:bg-slate-200"
+                        className="rounded-lg border border-slate-700 px-6 py-3 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:bg-slate-900"
                     >
                         Check Out My Work
                     </a>

@@ -11,7 +11,7 @@ function ProjectPage() {
 
   if (!project) {
     return (
-      <main className="min-h-screen bg-slate-950 text-white">
+      <main>
         <Section>
           <h1 className="text-4xl font-bold">
             Project not found
@@ -33,7 +33,7 @@ function ProjectPage() {
   }
 
   return (
-    <main className="min-h-screen bg-slate-950 text-white">
+    <main>
       <Section>
         <Link
           to="/#projects"
