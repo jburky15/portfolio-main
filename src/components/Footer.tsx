@@ -7,7 +7,7 @@ function Footer() {
         </p>
 
         <p>
-          Built with React, TypeScript, and Tailwind CSS.
+          Built to be awesome!
         </p>
       </div>
     </footer>
